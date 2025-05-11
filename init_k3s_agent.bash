@@ -3,9 +3,6 @@
 export MASTER_IP="10.0.0.5" 
 export REMOTE_USER="azureuser"
 
-scp $REMOTE_USER@$MASTER_IP:/var/lib/rancher/k3s/server/node-token ./node-token
-scp user@<master-ip>:/var/lib/rancher/k3s/server/node-token ./node-token
-
-export TOKEN=$(cat ./node-token)
+export TOKEN="K105cf45522e56a0a38cda2a96d4a1fe39d81f7f62df280100dc2e827c9cade7d8b::server:651136fe1619598a4330a30bfa32caa0"
 
 curl -sfL https://get.k3s.io | K3S_URL=https://$MASTER_IP:6443 K3S_TOKEN=$K3S_TOKEN sh -
