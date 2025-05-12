@@ -1,12 +1,11 @@
 #!/bin/bash
 
-# This script is used to create a new K3S agent node and join it to the K3S cluster.
-# It assumes that the K3S master node is already set up and running.
-
 export MASTER_IP="20.61.112.89"
 export MASTER_USER="azureuser"
 
 mkdir -p ~/master_info
+
+# Copying the master token file from the master node
 scp -i ~/.ssh/Test1_key.pem $MASTER_USER@$MASTER_IP:~/master_info.yaml ~/master_info/
 
 # Reading the yaml file to get the k3s token
